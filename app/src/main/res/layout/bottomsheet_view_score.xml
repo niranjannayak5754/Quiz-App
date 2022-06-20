@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/idLL_bottomSheet"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvScore"
+        android:padding="8dp"
+        android:text="Your score is \n 40/50"
+        android:layout_margin = "40dp"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btnRestartQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="@color/white"
+        android:text="@string/restart_quiz"
+        android:padding="10dp"
+        android:background = "@drawable/rounded_corners"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"/>
+</LinearLayout>
