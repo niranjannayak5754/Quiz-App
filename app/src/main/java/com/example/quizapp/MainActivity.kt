@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.quizapp.databinding.ActivityMainBinding
 import com.example.quizapp.models.Quiz
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     //declaring the required variables in the code
@@ -76,11 +77,12 @@ class MainActivity : AppCompatActivity() {
                         3 -> binding.btnOption3.setBackgroundColor(getColor(R.color.red))
                         4 -> binding.btnOption4.setBackgroundColor(getColor(R.color.red))
                     }
-                    Toast.makeText(
-                        this,
-                        "Wrong! The correct answer is option ${questions[currQuestion].corrAnswer}",
-                        Toast.LENGTH_LONG
-                    ).show()
+//                    Toast.makeText(
+//                        this,
+//                        "Wrong! The correct answer is option ${questions[currQuestion].corrAnswer}",
+//                        Toast.LENGTH_LONG
+//                    ).show()
+                    Snackbar.make(it, "Wrong! The correct answer is option ${questions[currQuestion].corrAnswer}",Toast.LENGTH_SHORT).show()
                 }
                 currQuestion++
                 disableViews()
@@ -171,7 +173,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setDataToViews() {
-        binding.tvCounter.text = "${currQuestion + 1}/10"
+        binding.tvScore.text = "Score: $currScore/50"
+        binding.tvCounter.text = "Question: ${currQuestion + 1}/10"
         binding.tvQuestion.text = questions[currQuestion].question
         binding.ivImage.setImageDrawable(questions[currQuestion].drawableImageName)
         binding.btnOption1.text = questions[currQuestion].option_A
